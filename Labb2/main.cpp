@@ -1,12 +1,28 @@
-#include "Header.h"
+#include "drawwindow.h"
+#include <textwindow.h>
+#include "dpoint.h"
+#include "dsquare.h"
+#include "circle.h"
+#include "plus.h"
 using namespace ShapeLib;
+void task2();
+void task3();
+void task4();
+void task5();
+void task6();
+void task7();
+void task8();
+void task9();
+void task10();
+void task11();
+void task22();
+void task23();
+void task45();
 
-int main(int argc, char *argv[])
-{
-    //TextWindow textWindow;
-    //textWindow.print("It's working!");
-    //textWindow.start();
-    //task1();
+
+
+int main(int argc, char *argv[]){
+
     //task2();
     //task3();
     //task4();
@@ -14,13 +30,13 @@ int main(int argc, char *argv[])
     //task6();
     //task7();
     //task8();
-    task9();
+    //task9();
     //task10();
     //task11();
-    //task12();
-    return 0;
+    //task22();
+    task23();
+    //task45();
 }
-
 void task1(){
     TextWindow textWindow1;
     textWindow1.print("Hello, World!");
@@ -175,13 +191,6 @@ void task11()
     for(int i=200; i<275;i+=15){
         painter->drawRect(i,200,15,20);
     }
-    /*painter->drawRect(200,200,100,20);
-    painter->drawRect(200,200,15,20);
-    painter->drawRect(215,200,15,20);
-    painter->drawRect(230,200,15,20);
-    painter->drawRect(245,200,15,20);
-    painter->drawRect(260,200,15,20);
-    painter->drawRect(275,200,15,20);*/
     drawWindow.commitPainterChanges();
     drawWindow.start();
 }
@@ -193,4 +202,33 @@ void task12()
     painter->setPen(Qt::white);
     drawWindow.setInterval(200,[&]{square.move(10,0);painter->drawRect(square.getLeft(),250,50,50); drawWindow.commitPainterChanges();});
     drawWindow.start();
+}
+
+void task22()
+{
+    DrawWindow window(500,500);
+    Square sq(50,200,200);
+    QPainter *painter = window.getPainter();
+    painter->setPen(Qt::white);
+    sq.draw(painter, Qt::white);
+    window.commitPainterChanges();
+    window.start();
+}
+
+void task23()
+{
+    DrawWindow drawWindow(500,500);
+    Plus plus(30,50,50);
+    QPainter *painter = drawWindow.getPainter();
+    painter->setPen(Qt::white);
+    plus.draw(painter,Qt:: white );
+    drawWindow.commitPainterChanges();
+    drawWindow.start();
+}
+void task45()
+{
+    TextWindow textWindow;
+    Plus plus(50,30,30);
+    textWindow.print(plus.getLength());
+    textWindow.start();
 }
