@@ -7,9 +7,9 @@ radius = 0;
 center = new Point(0,0);
 }
 
-Circle::Circle(const double radius, const double centerX, const double centerY) // konstruktor
+Circle::Circle(const double radius, const double centerX, const double centerY):radius(radius) // konstruktor
 {
-    center = new Point(centerX,centerY); // och en mittpunkt
+    center = new Point(centerX,centerY);
 }
 Circle::~Circle() // Destruktor
 {
@@ -63,6 +63,6 @@ double Circle::getBottom() const
 void Circle::draw(QPainter *painter, const Qt::GlobalColor color) const
 {
     painter->setPen(color);
-    painter->drawEllipse(center->getX(),center->getX(), radius, radius);
+    painter->drawEllipse(center->getX(),center->getY(), radius, radius);
 
 }

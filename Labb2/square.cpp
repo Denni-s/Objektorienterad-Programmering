@@ -62,5 +62,6 @@ double Square::getBottom() const
 }
 void Square::draw(QPainter* painter, const Qt::GlobalColor backgroundColor) const
 {
-    painter->fillRect(center->getX()-sideLength/2, center->getY()-sideLength/2, center->getX()+sideLength/2, center->getY()+sideLength/2, backgroundColor);
+
+    painter->fillRect(center->getX()-sideLength/2, center->getY()-sideLength/2, sideLength/2, sideLength/2, backgroundColor);
 }

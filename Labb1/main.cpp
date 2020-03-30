@@ -14,9 +14,9 @@ int main(int argc, char *argv[])
     //task6();
     //task7();
     //task8();
-    task9();
+    //task9();
     //task10();
-    //task11();
+    task11();
     //task12();
     return 0;
 }
@@ -166,22 +166,29 @@ void task11()
     DrawWindow drawWindow(500,500);
     Square square = Square(150,250,250);
     QPainter *painter = drawWindow.getPainter();
-    painter->setPen(Qt::white);
-    painter->drawEllipse(125,50,250,250);
-    painter->drawEllipse(175,100,35,35);
-    painter->drawEllipse(275,100,35,35);
-    painter->drawEllipse(225,150,25,25);
-
-    for(int i=200; i<275;i+=15){
-        painter->drawRect(i,200,15,20);
-    }
-    /*painter->drawRect(200,200,100,20);
-    painter->drawRect(200,200,15,20);
-    painter->drawRect(215,200,15,20);
-    painter->drawRect(230,200,15,20);
-    painter->drawRect(245,200,15,20);
-    painter->drawRect(260,200,15,20);
-    painter->drawRect(275,200,15,20);*/
+    painter->setBackground(Qt::black);
+    Circle eye1 = Circle(18,175,100);
+    Circle eye2 = Circle(18,320,100);
+    Circle head = Circle(150,250,180);
+    Circle nose = Circle(15,240,185);
+    Square mouth1 = Square(10,200,250);
+    Square mouth2= Square(10,210,250);
+    Square mouth3 = Square(10,220,250);
+    Square mouth4 = Square(10,230,250);
+    Square mouth5 = Square(10,240,250);
+    Square mouth6 = Square(10,250,250);
+    Square mouth7 = Square(10,260,250);
+    head.draw(painter,Qt::blue);
+    nose.draw(painter,Qt::white);
+    eye1.draw(painter,Qt::white);
+    eye2.draw(painter,Qt::white);
+    mouth1.draw(painter,Qt::white);
+    mouth2.draw(painter,Qt::white);
+    mouth3.draw(painter,Qt::white);
+    mouth4.draw(painter,Qt::white);
+    mouth5.draw(painter,Qt::white);
+    mouth6.draw(painter,Qt::white);
+    mouth7.draw(painter,Qt::white);
     drawWindow.commitPainterChanges();
     drawWindow.start();
 }
